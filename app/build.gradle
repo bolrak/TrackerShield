@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.pablo.kwadfilter'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.pablo.kwadfilter'
+        minSdk 26
+        targetSdk 29          // intentional: keeps the VPN foreground service simple. NOT meant for Google Play.
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+// No dependencies: the app uses only the Android framework (no AndroidX).
+dependencies {
+}

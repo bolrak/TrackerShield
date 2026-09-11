@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AdShield</string>
+    <string name="tagline">Blocks ads in all your apps</string>
+    <string name="btn_enable">ENABLE PROTECTION</string>
+    <string name="btn_disable">DISABLE</string>
+    <string name="status_on">Protection on</string>
+    <string name="status_off">Protection off</string>
+    <string name="section_level">BLOCKING LEVEL</string>
+    <string name="section_options">OPTIONS</string>
+    <string name="level_soft">Soft</string>
+    <string name="level_recommended">Recommended</string>
+    <string name="level_aggressive">Aggressive</string>
+    <string name="level_soft_desc">Only the biggest ad networks (Google, Unity, AppLovin). Maximum compatibility: won\'t break apps.</string>
+    <string name="level_recommended_desc">Most app and game ads (ironSource, Vungle, Mintegral and more). Best for everyday use.</string>
+    <string name="level_aggressive_desc">Ads + data trackers (AppsFlyer, Adjust, analytics). Maximum blocking; may affect some apps.</string>
+    <string name="opt_notif_title">Persistent notification</string>
+    <string name="opt_notif_desc">Keep the notice in the status bar</string>
+    <string name="footer">Local VPN: it doesn\'t send your data anywhere, it only filters DNS on your phone. The key icon in the status bar belongs to Android and can\'t be removed while the filter is on.</string>
+    <string name="notif_title">AdShield active</string>
+    <string name="notif_text">Blocking ads · %1$s</string>
+</resources>

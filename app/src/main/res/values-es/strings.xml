@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AdShield</string>
+    <string name="tagline">Bloquea anuncios en todas tus apps</string>
+    <string name="btn_enable">ACTIVAR PROTECCIÓN</string>
+    <string name="btn_disable">DESACTIVAR</string>
+    <string name="status_on">Protección activa</string>
+    <string name="status_off">Protección apagada</string>
+    <string name="section_level">NIVEL DE BLOQUEO</string>
+    <string name="section_options">OPCIONES</string>
+    <string name="level_soft">Suave</string>
+    <string name="level_recommended">Recomendado</string>
+    <string name="level_aggressive">Agresivo</string>
+    <string name="level_soft_desc">Solo las redes de anuncios más grandes (Google, Unity, AppLovin). Máxima compatibilidad: no rompe apps.</string>
+    <string name="level_recommended_desc">La mayoría de anuncios de apps y juegos (ironSource, Vungle, Mintegral y más). Lo mejor para el día a día.</string>
+    <string name="level_aggressive_desc">Anuncios + rastreadores de datos (AppsFlyer, Adjust, analíticas). Máximo bloqueo; puede afectar alguna app.</string>
+    <string name="opt_notif_title">Notificación permanente</string>
+    <string name="opt_notif_desc">Mantener el aviso en la barra de estado</string>
+    <string name="footer">VPN local: no envía tus datos a ningún servidor, solo filtra el DNS en tu móvil. El icono de llave en la barra es de Android y no se puede quitar mientras el filtro esté activo.</string>
+    <string name="notif_title">AdShield activo</string>
+    <string name="notif_text">Bloqueando anuncios · %1$s</string>
+</resources>

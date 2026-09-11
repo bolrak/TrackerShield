@@ -34,13 +34,9 @@ public class MainActivity extends Activity {
     private static final int MUTED  = Color.parseColor("#9BB0C5");
     private static final int GREEN  = Color.parseColor("#57D08A");
 
-    private static final String[] LV_NAME = {"Suave", "Recomendado", "Agresivo"};
-    private static final String[] LV_DESC = {
-            "Solo las redes de anuncios más grandes (Google, Unity, AppLovin). Máxima compatibilidad: no rompe apps.",
-            "La mayoría de anuncios de apps y juegos (ironSource, Vungle, Mintegral y más). Lo mejor para el día a día.",
-            "Anuncios + rastreadores de datos (AppsFlyer, Adjust, analíticas). Máximo bloqueo; puede afectar alguna app."
-    };
     private static final int[] LV_DOT = {GREEN, ACCENT, Color.parseColor("#FF7A6B")};
+    private String[] lvName;
+    private String[] lvDesc;
 
     private SharedPreferences prefs;
     private TextView bigBtn, status;
@@ -63,6 +59,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle b) {
         super.onCreate(b);
         prefs = getSharedPreferences(DnsVpnService.PREFS, MODE_PRIVATE);
+        lvName = new String[]{ getString(R.string.level_soft), getString(R.string.level_recommended), getString(R.string.level_aggressive) };
+        lvDesc = new String[]{ getString(R.string.level_soft_desc), getString(R.string.level_recommended_desc), getString(R.string.level_aggressive_desc) };
 
         // Quitar la barra de título y que el fondo llegue hasta arriba
         try { if (getActionBar() != null) getActionBar().hide(); } catch (Exception ignore) {}
@@ -88,7 +86,7 @@ public class MainActivity extends Activity {
         root.addView(logo);
 
         TextView title = new TextView(this);
-        title.setText("AdShield");
+        title.setText(getString(R.string.app_name));
         title.setTextColor(WHITE);
         title.setTextSize(30);
         title.setTypeface(Typeface.DEFAULT_BOLD);
@@ -97,7 +95,7 @@ public class MainActivity extends Activity {
         root.addView(title);
 
         TextView sub = new TextView(this);
-        sub.setText("Bloquea anuncios en todas tus apps");
+        sub.setText(getString(R.string.tagline));
         sub.setTextColor(MUTED);
         sub.setTextSize(14);
         sub.setGravity(Gravity.CENTER);
@@ -124,7 +122,7 @@ public class MainActivity extends Activity {
         root.addView(status);
 
         // Section: level
-        root.addView(sectionLabel("NIVEL DE BLOQUEO"));
+        root.addView(sectionLabel(getString(R.string.section_level)));
         for (int i = 0; i < 3; i++) {
             final int idx = i;
             LinearLayout card = new LinearLayout(this);
@@ -152,7 +150,7 @@ public class MainActivity extends Activity {
             head.addView(dot);
 
             TextView t = new TextView(this);
-            t.setText(LV_NAME[i]);
+            t.setText(lvName[i]);
             t.setTextColor(WHITE);
             t.setTextSize(16);
             t.setTypeface(Typeface.DEFAULT_BOLD);
@@ -161,7 +159,7 @@ public class MainActivity extends Activity {
             card.addView(head);
 
             TextView d = new TextView(this);
-            d.setText(LV_DESC[i]);
+            d.setText(lvDesc[i]);
             d.setTextColor(MUTED);
             d.setTextSize(13);
             d.setPadding(dp(20), dp(6), 0, 0);
@@ -172,7 +170,7 @@ public class MainActivity extends Activity {
         }
 
         // Section: options
-        root.addView(sectionLabel("OPCIONES"));
+        root.addView(sectionLabel(getString(R.string.section_options)));
         LinearLayout notifRow = new LinearLayout(this);
         notifRow.setOrientation(LinearLayout.HORIZONTAL);
         notifRow.setGravity(Gravity.CENTER_VERTICAL);
@@ -188,11 +186,11 @@ public class MainActivity extends Activity {
                 ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
         txtCol.setLayoutParams(tcp);
         TextView nT = new TextView(this);
-        nT.setText("Notificación permanente");
+        nT.setText(getString(R.string.opt_notif_title));
         nT.setTextColor(WHITE);
         nT.setTextSize(15);
         TextView nD = new TextView(this);
-        nD.setText("Mantener el aviso en la barra de estado");
+        nD.setText(getString(R.string.opt_notif_desc));
         nD.setTextColor(MUTED);
         nD.setTextSize(12);
         txtCol.addView(nT);
@@ -210,7 +208,7 @@ public class MainActivity extends Activity {
 
         // Footer
         TextView foot = new TextView(this);
-        foot.setText("VPN local: no envía tus datos a ningún servidor, solo filtra el DNS en tu móvil. El icono de llave en la barra es de Android y no se puede quitar mientras el filtro esté activo.");
+        foot.setText(getString(R.string.footer));
         foot.setTextColor(Color.parseColor("#6E839A"));
         foot.setTextSize(12);
         foot.setPadding(dp(4), dp(24), dp(4), 0);
@@ -294,14 +292,14 @@ public class MainActivity extends Activity {
         boolean on = DnsVpnService.RUNNING;
         int level = prefs.getInt("level", 1);
 
-        bigBtn.setText(on ? "DESACTIVAR" : "ACTIVAR PROTECCIÓN");
+        bigBtn.setText(on ? getString(R.string.btn_disable) : getString(R.string.btn_enable));
         GradientDrawable g = new GradientDrawable(
                 GradientDrawable.Orientation.LEFT_RIGHT,
                 on ? new int[]{ACCENT, ACCENT2} : new int[]{OFFGRAY, OFFGRAY});
         g.setCornerRadius(dp(16));
         bigBtn.setBackground(g);
 
-        status.setText(on ? "● Protección activa" : "○ Protección apagada");
+        status.setText((on ? "● " : "○ ") + getString(on ? R.string.status_on : R.string.status_off));
         status.setTextColor(on ? GREEN : MUTED);
 
         for (int i = 0; i < 3; i++) {

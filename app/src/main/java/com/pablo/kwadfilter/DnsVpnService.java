@@ -111,7 +111,7 @@ public class DnsVpnService extends VpnService {
 
     private Notification buildNotification(int level) {
         String ch = "adshield";
-        String[] names = {"Suave", "Recomendado", "Agresivo"};
+        String[] names = { getString(R.string.level_soft), getString(R.string.level_recommended), getString(R.string.level_aggressive) };
         if (Build.VERSION.SDK_INT >= 26) {
             NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             nm.createNotificationChannel(new NotificationChannel(ch, "AdShield",
@@ -126,8 +126,8 @@ public class DnsVpnService extends VpnService {
         Notification.Builder b = (Build.VERSION.SDK_INT >= 26)
                 ? new Notification.Builder(this, ch)
                 : new Notification.Builder(this);
-        b.setContentTitle("AdShield activo");
-        b.setContentText("Bloqueando anuncios · Nivel " + names[Math.max(0, Math.min(2, level))]);
+        b.setContentTitle(getString(R.string.notif_title));
+        b.setContentText(getString(R.string.notif_text, names[Math.max(0, Math.min(2, level))]));
         b.setSmallIcon(android.R.drawable.ic_lock_idle_lock);
         b.setContentIntent(pi);
         b.setOngoing(true);

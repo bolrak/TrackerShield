@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="120" alt="AdShield">
-  <h1>AdShield</h1>
+  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="120" alt="TrackerShield">
+  <h1>TrackerShield</h1>
   <p><b>A privacy shield for all your Android apps: fewer trackers, fewer intrusions.</b><br>
   <b>Un escudo de privacidad para todas tus apps de Android: menos rastreadores, menos intromisiones.</b></p>
   <p>No root · No account · 100% local (your data never leaves your phone)<br>
@@ -19,7 +19,7 @@
 
 ## 🇬🇧 English
 
-AdShield is a tiny app (~25&nbsp;KB) that runs a **local VPN** (nothing leaves your device)
+TrackerShield is a tiny app (~25&nbsp;KB) that runs a **local VPN** (nothing leaves your device)
 to **filter DNS** and cut off the domains that **track you and profile you** (analytics, telemetry and ad-network trackers). Because your traffic never goes to any
 external server, it's private and lightweight.
 
@@ -38,9 +38,9 @@ external server, it's private and lightweight.
 | 🔴 **Aggressive** | Ad trackers **+ analytics/telemetry** (AppsFlyer, Adjust, Firebase Analytics…). | Max privacy; may affect some app features. |
 
 ### 📲 Install
-1. Download **`AdShield.apk`** (from [Releases](../../releases) or this repo).
+1. Download **`TrackerShield.apk`** (from [Releases](../../releases) or this repo).
 2. Open it and allow *"install from unknown sources"* if asked.
-3. Open **AdShield** → **ACTIVAR PROTECCIÓN** → **Allow** the VPN request.
+3. Open **TrackerShield** → **ACTIVAR PROTECCIÓN** → **Allow** the VPN request.
 4. Pick a level (**Recommended** for most people).
 
 > A key/VPN icon appears in the status bar while active — that's Android's own indicator
@@ -60,14 +60,14 @@ Open in **Android Studio** and let Gradle sync (downloads AGP/Gradle). Then Run 
 No external dependencies (Android framework only). `minSdk 26`, `targetSdk 29`.
 
 ### 🚫 Not on Google Play
-Google Play restricts VPN-style tools that filter *other* apps. That's why AdShield is
+Google Play restricts VPN-style tools that filter *other* apps. That's why TrackerShield is
 distributed via **APK / GitHub**, like AdGuard, Blokada or RethinkDNS.
 
 ---
 
 ## 🇪🇸 Español
 
-AdShield es una app minúscula (~25&nbsp;KB) que monta una **VPN local** (no sale de tu móvil)
+TrackerShield es una app minúscula (~25&nbsp;KB) que monta una **VPN local** (no sale de tu móvil)
 para **filtrar el DNS** y cortar los dominios que **te rastrean y perfilan** (analíticas, telemetría y rastreadores de redes publicitarias). Como tu tráfico no
 va a ningún servidor externo, es privada y ligera.
 
@@ -86,9 +86,9 @@ va a ningún servidor externo, es privada y ligera.
 | 🔴 **Agresivo** | Rastreadores de anuncios **+ analíticas/telemetría** (AppsFlyer, Adjust, Firebase Analytics…). | Máxima privacidad; puede afectar alguna app. |
 
 ### 📲 Instalación
-1. Descarga **`AdShield.apk`** (en [Releases](../../releases) o este repo).
+1. Descarga **`TrackerShield.apk`** (en [Releases](../../releases) o este repo).
 2. Ábrelo y permite *"instalar de orígenes desconocidos"* si te lo pide.
-3. Abre **AdShield** → **ACTIVAR PROTECCIÓN** → **Aceptar** la solicitud de VPN.
+3. Abre **TrackerShield** → **ACTIVAR PROTECCIÓN** → **Aceptar** la solicitud de VPN.
 4. Elige un nivel (**Recomendado** para la mayoría).
 
 > Al activarse verás un icono de llave/VPN en la barra de estado: es de Android (aparece con

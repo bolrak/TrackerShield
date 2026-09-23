@@ -1,8 +1,8 @@
 <div align="center">
   <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="120" alt="AdShield">
   <h1>AdShield</h1>
-  <p><b>An ad blocker for all your Android apps.</b><br>
-  <b>Un bloqueador de anuncios para todas tus apps de Android.</b></p>
+  <p><b>A privacy shield for all your Android apps: fewer trackers, fewer intrusions.</b><br>
+  <b>Un escudo de privacidad para todas tus apps de Android: menos rastreadores, menos intromisiones.</b></p>
   <p>No root · No account · 100% local (your data never leaves your phone)<br>
   Sin root · Sin cuenta · 100&nbsp;% local (tus datos nunca salen del móvil)</p>
 </div>
@@ -20,7 +20,7 @@
 ## 🇬🇧 English
 
 AdShield is a tiny app (~25&nbsp;KB) that runs a **local VPN** (nothing leaves your device)
-to **filter DNS** and block ad-network domains. Because your traffic never goes to any
+to **filter DNS** and cut off the domains that **track you and profile you** (analytics, telemetry and ad-network trackers). Because your traffic never goes to any
 external server, it's private and lightweight.
 
 ### ✨ Features
@@ -33,9 +33,9 @@ external server, it's private and lightweight.
 ### 🛡️ Blocking levels
 | Level | Blocks | For whom |
 |-------|--------|----------|
-| 🟢 **Soft** | Only the biggest ad networks (Google Ads, Unity, AppLovin). | Max compatibility, won't break apps. |
-| 🔵 **Recommended** | Most app & game ads (ironSource, Vungle, Mintegral, Criteo…). | Everyday use. |
-| 🔴 **Aggressive** | Ads **+ trackers/analytics** (AppsFlyer, Adjust, Firebase Analytics…). | Max privacy; may affect some app features. |
+| 🟢 **Soft** | Only the biggest ad-network trackers (Google Ads, Unity, AppLovin). | Max compatibility, won't break apps. |
+| 🔵 **Recommended** | Most app & game ad trackers (ironSource, Vungle, Mintegral, Criteo…). | Everyday use. |
+| 🔴 **Aggressive** | Ad trackers **+ analytics/telemetry** (AppsFlyer, Adjust, Firebase Analytics…). | Max privacy; may affect some app features. |
 
 ### 📲 Install
 1. Download **`AdShield.apk`** (from [Releases](../../releases) or this repo).
@@ -53,24 +53,22 @@ external server, it's private and lightweight.
   (the ad won't load); otherwise it's forwarded to your **network's real DNS** (`1.1.1.1`/`8.8.8.8`
   as fallback) and the answer is returned.
 - Single thread, `poll()`-based wait → **~0% CPU when idle** (no battery drain).
-- Built-in exception: `events.mz.unity3d.com` is always allowed, so it doesn't trigger the
-  "anti-adblock wall" some streaming apps use.
+- Built-in compatibility exception: `events.mz.unity3d.com` is always allowed, so some apps keep working normally.
 
 ### 🔧 Build
 Open in **Android Studio** and let Gradle sync (downloads AGP/Gradle). Then Run ▶ / `Build > Build APK(s)`.
 No external dependencies (Android framework only). `minSdk 26`, `targetSdk 29`.
 
 ### 🚫 Not on Google Play
-Google Play doesn't allow VPN-style ad blockers that filter *other* apps ("interference with
-other apps" policy). That's why AdShield is distributed via **APK / GitHub**, like AdGuard,
-Blokada or RethinkDNS. Please don't upload it to Play.
+Google Play restricts VPN-style tools that filter *other* apps. That's why AdShield is
+distributed via **APK / GitHub**, like AdGuard, Blokada or RethinkDNS.
 
 ---
 
 ## 🇪🇸 Español
 
 AdShield es una app minúscula (~25&nbsp;KB) que monta una **VPN local** (no sale de tu móvil)
-para **filtrar el DNS** y bloquear los dominios de las redes de anuncios. Como tu tráfico no
+para **filtrar el DNS** y cortar los dominios que **te rastrean y perfilan** (analíticas, telemetría y rastreadores de redes publicitarias). Como tu tráfico no
 va a ningún servidor externo, es privada y ligera.
 
 ### ✨ Características
@@ -83,9 +81,9 @@ va a ningún servidor externo, es privada y ligera.
 ### 🛡️ Niveles de bloqueo
 | Nivel | Qué bloquea | Para quién |
 |-------|-------------|------------|
-| 🟢 **Suave** | Solo las redes grandes (Google Ads, Unity, AppLovin). | Máxima compatibilidad, no rompe apps. |
-| 🔵 **Recomendado** | La mayoría de anuncios de apps y juegos (ironSource, Vungle, Mintegral, Criteo…). | El día a día. |
-| 🔴 **Agresivo** | Anuncios **+ rastreadores/analíticas** (AppsFlyer, Adjust, Firebase Analytics…). | Máxima privacidad; puede afectar alguna app. |
+| 🟢 **Suave** | Solo los rastreadores de las redes grandes (Google Ads, Unity, AppLovin). | Máxima compatibilidad, no rompe apps. |
+| 🔵 **Recomendado** | La mayoría de rastreadores de anuncios de apps y juegos (ironSource, Vungle, Mintegral, Criteo…). | El día a día. |
+| 🔴 **Agresivo** | Rastreadores de anuncios **+ analíticas/telemetría** (AppsFlyer, Adjust, Firebase Analytics…). | Máxima privacidad; puede afectar alguna app. |
 
 ### 📲 Instalación
 1. Descarga **`AdShield.apk`** (en [Releases](../../releases) o este repo).
@@ -103,17 +101,15 @@ va a ningún servidor externo, es privada y ligera.
   (el anuncio no carga); si no → la reenvía al **DNS real de tu red** (`1.1.1.1`/`8.8.8.8` de
   respaldo) y devuelve la respuesta.
 - Un solo hilo, espera con `poll()` → **~0&nbsp;% de CPU en reposo** (no gasta batería).
-- Excepción integrada: `events.mz.unity3d.com` se permite siempre, para no activar el
-  "muro anti-bloqueador" de algunas apps de streaming.
+- Excepción de compatibilidad: `events.mz.unity3d.com` se permite siempre, para que algunas apps sigan funcionando con normalidad.
 
 ### 🔧 Compilar
 Ábrelo en **Android Studio** y deja que sincronice Gradle. Luego Run ▶ / `Build > Build APK(s)`.
 Sin dependencias externas (solo el framework de Android). `minSdk 26`, `targetSdk 29`.
 
 ### 🚫 No en Google Play
-Google Play **no permite** bloqueadores tipo VPN que filtran *otras* apps (política de
-"interferencia con otras apps"). Por eso se distribuye por **APK / GitHub**, igual que AdGuard,
-Blokada o RethinkDNS. No lo subas a Play.
+Google Play restringe las herramientas tipo VPN que filtran *otras* apps. Por eso se
+distribuye por **APK / GitHub**, igual que AdGuard, Blokada o RethinkDNS.
 
 ---
 
